@@ -1,0 +1,132 @@
+<vex-header [loggedIn]="login"></vex-header>
+
+<main class="">
+  <!-- Desctiption -->
+  <section class="flex align-items-center justify-content-center">
+    <div class="flex flex-column row-gap-4 w-5">
+      <span class="font-bold text-orange text-base"
+        >EXPLORE THE WORLD WITH US</span
+      >
+      <div class="font-bold text-5xl flex flex-column">
+        <span>Travel, enjoy</span>
+        <span>and live a new</span>
+        <span>and full life</span>
+      </div>
+      <p class="text-sm w-8">
+        Plan and book your perfect trip with expert advice, travel tips,
+        destination information and inspiration from us.
+      </p>
+      <div class="flex column-gap-2 mt-2">
+        <p-button [outlined]="true" (click)="showDialog()"
+          >Get Started</p-button
+        >
+        <p-button >
+          <i class="pi pi-video mr-1"></i>
+          Play Demo
+        </p-button>
+      </div>
+    </div>
+    <!-- Description Right Section-->
+    <img class="w-auto h-auto" src="../assets/tourist.png" />
+  </section>
+
+  <!-- Tutorials -->
+  <div class="flex justify-content-center gap-8 mt-6">
+    <div
+      class="relative w-24rem h-24rem border-circle flex align-items-center justify-content-center image-container"
+    >
+      <img class="w-10rem h-auto" src="../assets/phone.png" />
+
+      <div
+        class="absolute border-round-lg flex flex-column align-items-center badge-position bg-white p-5"
+      >
+        <img class="w-2rem h-auto" src="../assets/icons/place.png" />
+        <span class="font-bold text-orange text-2xl">3000+</span>
+        <p class="opacity-80">Destinations</p>
+      </div>
+    </div>
+    <!-- Badge -->
+
+    <div class="">
+      <span class="font-bold text-orange text-xl">Our Service</span>
+      <div class="font-bold text-5xl flex flex-column">
+        <span>Plan your trip</span>
+        <span>with few clicks</span>
+      </div>
+      <ul class="mt-5">
+        <li class="flex gap-5 mb-5">
+          <img class="w-2rem h-2rem" src="../assets/icons/google-maps.png" />
+          <div>
+            <div class="font-bold">Choose a place</div>
+            <span>Select your destination</span>
+          </div>
+        </li>
+        <li class="flex gap-5 mb-5">
+          <img class="w-2rem h-2rem" src="../assets/icons/route.png" />
+          <div>
+            <div class="font-bold">Plan your route</div>
+            <span>Plan your route by dragging and dropping</span>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <img class="w-2rem h-2rem" src="../assets/icons/check.png" />
+          <div>
+            <div class="font-bold">Done !!</div>
+            <span>Export your planned route as image</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<!-- Newsletter -->
+<div
+  class="bg-custom-pattern p-6 border-round-lg relative flex align-items-center justify-content-center mt-5 ml-auto mr-auto w-10"
+>
+  <div class="relative z-10">
+    <h2 class="text-xl font-bold mb-3">Sign up to our newsletter</h2>
+    <p class="text-gray-700 mb-6">
+      Receive latest news, update, and many other things every week.
+    </p>
+    <form class="flex " action="#" method="POST">
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email address"
+        class="p-4 w-full border-round-lg border-2 border-gray-300 focus:outline-none focus:border-red-300"
+        required
+      />
+      <p-button type="submit" class="bg-red text-white  p-3">
+        Subscribe
+      </p-button>
+    </form>
+  </div>
+</div>
+
+
+<p-dialog [(visible)]="visible" [modal]="true"  [draggable]="false" [resizable]="false" (onShow)="renderGoogleSignInButton()">
+  <ng-template pTemplate="header">
+    <div class="inline-flex align-items-center justify-content-center gap-2">
+        <p-avatar image="../assets/logo.png" shape="circle" />
+        <span class="font-bold white-space-nowrap">Explore</span>
+    </div>
+  </ng-template>
+  <div class="p-4 border-round w-full ">
+    <div class="text-center mb-5">
+        <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
+        <span class="text-600 font-medium line-height-3">Don't have an account?</span>
+        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
+    </div>
+    <div class="flex align-items-center justify-content-center"id="google-button"></div>
+  </div>
+</p-dialog>
+
+<!-- Plan New Trip -->
+<section>
+
+  
+</section>
+
+<vex-footer></vex-footer>

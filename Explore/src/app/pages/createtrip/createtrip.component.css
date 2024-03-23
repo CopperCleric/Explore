@@ -1,0 +1,15 @@
+.color {
+    background-color: #d1d6db;
+    border-radius: 50%;
+    min-width: 10px;
+    min-height: 10px;
+    color:transparent;
+}
+
+.template {
+    display: flex;
+}
+
+.form-item {
+    min-height: 45px;
+}

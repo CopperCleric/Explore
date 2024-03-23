@@ -1,0 +1,26 @@
+<header class="flex align-items-center justify-content-between mx-auto p-4">
+    <div class="flex align-items-center">
+      <div class="flex justify-content-center align-items-center mr-3">
+        <img class="logo" alt="logo of explore" src="../assets/logo.png">
+        <span class="pl-2 text-2xl font-semibold">Explore</span>
+      </div>
+  
+      <div *ngIf="loggedIn === 'false'">
+        <ul class="flex text-base pl-12 gap-4 list-none">
+          <li ><a class="no-underline" href="#">Home</a></li>
+          <li><a class="no-underline" href="#">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div *ngIf="loggedIn === 'true'" class="card flex justify-content-center">
+      <p-menu #menu [model]="items" [popup]="true"></p-menu>
+      <p-button styleClass="p-1 text-black-alpha-90" (click)="menu.toggle($event)" [outlined]="true">
+        <p-avatar class="mr-2" shape="circle">
+          <img src="../assets/logo.png"/>
+        </p-avatar>
+        <span>Zheng Wu Bang</span>
+      </p-button>
+    </div>
+</header>
+

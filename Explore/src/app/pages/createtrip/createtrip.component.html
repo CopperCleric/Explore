@@ -1,0 +1,60 @@
+<vex-header [loggedIn]="login"></vex-header>
+<section class="flex flex-column align-items-center gap-5 px-4 py-3 md:px-12">
+    <div class="text-center text-2xl">
+        Plan Your Next Adventure
+    </div>
+    <form class="flex flex-column align-items-start gap-5" [formGroup]="tripForm">
+    
+        <div class="flex flex-column w-full gap-2">
+            <label for="destination">Where do you want to go ?</label>
+            <input id="destination" placeholder="Enter a city" class="w-11" type="text" pInputText formControlName="destination" />
+        </div>
+        
+        <div class="flex flex-column w-full gap-2">
+            <label for="name">Name your trip</label>
+            <input id="name" placeholder="Give your trip a name" class="w-11" type="text" pInputText formControlName="name" />
+        </div>
+        
+        <div class="flex flex-column w-full gap-2">
+            <label for="date">Select dates</label>
+            <p-calendar id="date" placeholder="Pick a date" styleClass="w-11" formControlName="date" selectionMode="range" [showButtonBar]="true">
+                <ng-template class="template" pTemplate="footer">
+                <span class="color">aa</span>
+                <span class="text-sm"> indicates current date</span>
+                </ng-template>
+            </p-calendar>
+        </div>
+        
+        <div class="flex flex-column w-full gap-2">
+            <label for="budget">
+                <span class="text-base">How much do you plan to spend on this trip?</span>
+                <p class="mt-1 text-xs text-gray-400">
+                    Consider 
+                    <span class="text-gray-900">Stay + Activities + Food.</span> 
+                    Do not include flights
+                </p>
+            </label>
+            <p-dropdown id="budget" styleClass="w-11" formControlName="budget" [options]="budgetList" optionLabel="name" placeholder="Select a budget"></p-dropdown>
+        </div>
+      
+
+        <div class="relative flex form-item">
+            <p class="flex w-full items-center gap-2 border-round border border-solid border-gray-300 px-4 py-2.5 text-base outline-none focus:border-pink-400">
+                <span class="border-circle bg-gray-300 text-center">1</span>
+                Person
+            </p>
+            <div class="absolute right-1 top-2 flex gap-2">
+                <button class="flex h-2rem w-2rem align-items-center justify-content-center border-circle border border-solid border-gray-300 bg-gray-100 p-1 transition-colors hover:border-gray-400">
+                    <p class="mb-[2px] text-xl leading-[15px]">-</p>
+                </button>
+                <button class="flex h-2rem w-2remalign-items-center justify-content-center border-circle border border-solid border-gray-300 bg-gray-100 p-1 transition-colors hover:border-gray-400">
+                    <p class="mb-[2px] text-xl leading-[15px]">+</p>
+                </button>
+            </div>
+        </div>
+        <p-button class="mx-auto" type="Submit">Create New Trip</p-button>
+    </form>    
+</section>
+
+<p>{{ tripForm.get('startDate')?.value }}</p>
+<vex-footer></vex-footer>
